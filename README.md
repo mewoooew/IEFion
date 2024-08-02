@@ -1,4 +1,4 @@
-# IEF_GNSS Data Converter
+# IEFion GNSS Data Converter
 
 convert GNSS ( **BDS** | **GPS** ) data form receiver raw format (trimble **T02** ) to **RINEX**, and extract high-precision **TEC** data from RINEX file. 
 

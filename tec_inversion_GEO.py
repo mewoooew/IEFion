@@ -5,7 +5,7 @@
 @filename :  tec_inversion_GEO.py
 @desc     :  extract and inverse TEC data(1Hz) from RINEX files for each day
 @time     :  2024/06/01
-@author   :  _koii^_ (Liu Hong), Institute of Earthquake Forecasting (IEF), CEA.
+@author   :  _koii^_, IEF, CEA.
 @Version  :  1.0
 @Contact  :  koi_alley@outlook.com
 """
