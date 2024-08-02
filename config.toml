@@ -1,0 +1,59 @@
+### dashboard ###
+stations = 'ALL' # ['ahbb', 'gs'] # in lower-case
+year = 2024
+doys = 'auto'
+# doys = [210,209,208,207,206] # # [162]#   # list [153] | 'auto'
+
+# thin-layer-ionosphere height, unit: km
+Hionos = 350 
+
+### srcdir ###
+source = '/run/media/echoo/Violet/'
+### archives ###
+[archives]
+# inputs: must be valid
+dataGnss = 'CMONOC' 
+dataSp3 = 'IGSsp3' 
+dataGim = 'IGSgim' 
+dataT02 = 'raw1s'
+dataTGD = 'TGD'
+dataRnx = 'RNX' 
+dataNav = 'NAV'
+# outputs: will be built up
+dataTEC = 'TEC'
+dataNC = 'netCDF'
+dataPlots = 'plots'
+dataRmv = 'toRemove'
+
+# OBSV:obsName, ISO:country, R:fromReceiver, 
+# YEAR:stryear, DOY:dayOfYear, D:Day, S:Second, 
+# C:BeiDou, Ofile
+
+# dirTree # *outputs
+#  - source
+#    |-- dataGnss
+#    |   |-- dataRnx
+#    |   |   |-- stryear
+#    |   |   |   |-- doy
+#    |   |   |   |   |-- OBSV00ISO_R_YEARDOY0000_01D_01S_CO.RNX
+#    |   |   |   |   |-- AHBB00CHN_R_20233430000_01D_01S_CO.RNX 
+#    |   |-- dataT02 -- stryear -- doy   # must be valid
+#    |   |-- dataTGD -- stryear -- doy
+#    |   |-- dataNav -- stryear -- doy
+#    |   |-- dataTEC*
+#    |   |   |-- stryear
+#    |   |   |   |-- doy
+#    |   |   |   |   |-- dataPlots # .png outputs 
+#    |   |   |   |   |-- BeiDou_TEC_DOY_01s_YEAR.nc
+#    |   |   |   |   |-- BeiDou_TEC_343_01s_2023.nc (e.g.)
+#    |   |-- dataRmv -- today # data to remove later
+#    |-- dataSp3
+#    |   |-- stryear
+#    |   |   |-- doy
+#    |   |   |   |-- IGSIMGXFIN_YEARDOY0000_01D_05M_ORB.SP3
+#    |   |   |   |-- WUM0MGXFIN_20233430000_01D_05M_ORB.SP3 (e.g.)
+#    |-- dataGim
+#    |   |-- nc # processed to be ncFomat in advance
+#    |   |   |-- stryear
+#    |   |   |   |-- COD0YEARDOY.nc
+#    |   |   |   |-- COD02023343.nc (e.g.)

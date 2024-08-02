@@ -1,0 +1,8 @@
+compare.toml
+dailyWork.py
+BeiDou.toml
+ief_gnss.sh
+*para*
+*backup*
+*test*
+_pycache_
